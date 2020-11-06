@@ -1,20 +1,5 @@
 
-
-class Headertext extends React.Component{
-  constructor(){
-      super()
-  }
-  render(){
-    return(
-      <header className="jumbotron text-center">
-        <h3> Hi Wellcome To My Web</h3>
-      </header>
-    )
-  }
-}
-
-
-class Divmenu extends React.Component{
+class Headermenu extends React.Component{
   constructor(){
       super()
       this.Home = "Home"
@@ -44,6 +29,7 @@ class Divmenu extends React.Component{
                   </li>
                 </ul>
                 <form className="form-inline">
+                {/*sau nếu có thể phát triển sẽ thêm hoặc thay thế bằng chức năng đăng nhập */}
                   <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
                   <button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
                 </form>
@@ -54,6 +40,31 @@ class Divmenu extends React.Component{
   }           
 }
 
-ReactDOM.render(<Divmenu />, document.getElementById("jsmenu"))
-ReactDOM.render(<Headertext />, document.getElementById("jsheadertext"))
+
+
+class Context extends React.Component{
+  constructor(){
+      super()
+  }
+  render(){
+    return(
+      <header className="jumbotron text-center">
+        <h3> Hi Wellcome To My Web</h3>
+      </header>
+    )
+  }
+}
+class App extends React.Component{
+  render(){
+    return(
+      <React.Fragment> 
+        <Headermenu></Headermenu>
+        <Context></Context>
+      </React.Fragment>
+      
+     
+    )
+  }
+}
+ReactDOM.render(<App />, document.getElementById("app"))
       
